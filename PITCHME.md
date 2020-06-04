@@ -6,72 +6,89 @@ theme: uncover
 paginate: true
 _paginate: false
 ---
+![bg 40% opacity blur](./assets/quarkus.png)
 
-![bg](./assets/gradient.jpg)
+# <!--fit--> Introduction to Quarkus
 
-# <!--fit--> Marp CLI example
+https://github.com/louisblack/quarkus-talk
 
-Hosting Marp slide deck on the web
+---
+![bg 40% opacity blur](./assets/kubernetes.png)
 
-https://github.com/yhatt/marp-cli-example
-
-<style scoped>a { color: #eee; }</style>
-
-<!-- This is presenter note. You can write down notes through HTML comment. -->
+##### <!--fit--> A Kubernetes native framework
 
 ---
 
-![Marp bg 60%](https://raw.githubusercontent.com/marp-team/marp/master/marp.png)
+### ¯\\\_(ツ)\_/¯
+
+* Microservice focused
+* Containers not servers
+* Creating and killing nodes all the time
+* Scale out, not up
+
+---
+### How does it support this?
+
+* Fast start up
+* Low memory usage
+* GraalVM Secret Sauce
 
 ---
 
-![bg](#123)
-![](#fff)
-
-##### <!--fit--> [Marp CLI](https://github.com/marp-team/marp-cli) + [GitHub Pages](https://github.com/pages) | [Netlify](https://www.netlify.com/) | [Vercel](https://vercel.com/)
-
-##### <!--fit--> 👉 The easiest way to host<br />your Marp deck on the web
-
----
-
-![bg right 60%](https://icongr.am/octicons/mark-github.svg)
-
-## **[GitHub Pages](https://github.com/pages)**
-
-#### Ready to write & host your deck!
-
-[![Fork on GitHub h:1.5em](https://img.shields.io/github/forks/yhatt/marp-cli-example?label=Fork&style=social)](https://github.com/yhatt/marp-cli-example)
-
-<!-- _footer: ":information_source: Require to pass ACCESS_TOKEN as secret." -->
+### Tools we all know and love(ish)
+* Dependency Injection
+* JAX-RS (or Spring Web API)
+* Vert.x (reactive API)
+* JPA, Hibernate
+* Etc.....
 
 ---
 
-![bg right 60%](https://www.netlify.com/img/press/logos/logomark.svg)
+##### <!--fit--> Code!
+---
 
-## **[Netlify](https://www.netlify.com/)**
+![width:100%](./assets/graalvm.svg)
+ 
+---
+### Native Images
 
-#### Ready to write & host your deck!
-
-[![Deploy to Netlify h:1.5em](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yhatt/marp-cli-example)
+* Native binary (Linux 64 bit)
+* Ahead of time compiled
+* Statically linked
+* Class initialisation at build time (Profiles for different environments)
+* Ridiculous start up time
+* Ridiculously low memory usage
 
 ---
 
-![bg right 60%](https://raw.githubusercontent.com/yhatt/marp-cli-example/master/vercel.svg?sanitize=true)
-
-## **[Vercel](https://vercel.com/)**
-
-#### Ready to write & host your deck!
-
-[![Deploy to Vercel h:1.5em](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/yhatt/marp-cli-example)
+##### <!--fit--> Demo!
 
 ---
 
-### <!--fit--> :ok_hand:
+Which opens the door to...
 
 ---
 
-![bg 40% opacity blur](https://avatars1.githubusercontent.com/u/3993388?v=4)
+### Java on Lambda 😲
 
-### Created by Yuki Hattori ([@yhatt](https://github.com/yhatt))
+* Lambda API abstracted away - no events, etc
+* Routing all done by the framework 
 
-https://github.com/yhatt/marp-cli-example
+---
+
+##### <!--fit--> Another Demo!
+
+---
+### Drawbacks :(
+
+* Native images slow to create
+* JVM tests fast but not the same as native
+* Some libraries not compatible with AOT compilation
+* `@RegisterForReflection` due to dead code removal
+* SSL fiddly
+
+---
+
+Questions?
+
+---
